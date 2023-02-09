@@ -1,0 +1,93 @@
+*, *::after, *::before  {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: green;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 4rem);
+    grid-template-rows: 7rem 2rem 7rem;
+    gap: 4rem;
+    justify-content: center;
+    padding-top: 8rem;
+    padding-right: 7rem;
+}
+
+.deck {
+    color: #fbfbfb;
+    height: 200%;
+    width: 200%;
+    border: 1px solid rgb(60, 60, 209);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    user-select: none;
+    
+}
+
+.computer-deck {
+    background-color: blue;
+}
+
+.player-deck {
+    background-color: blue;
+}
+
+.text {
+    color: white;
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: bottom;
+    margin-top: 3.5rem;
+    margin-left: 7rem;
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: bold;
+    user-select: none;
+}
+
+.card {
+    position: relative;
+    background-color: white;
+    height: 200%;
+    width: 200%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(211, 161, 161);
+    border-radius: .5rem;
+    font-size: 7rem;
+    margin-left: 3rem;
+    user-select: none;
+}
+
+.card.red {
+    color: red;
+}
+
+.card.black {
+    color: black;
+}
+
+.card::before,
+.card::after {
+    position: absolute;
+    content: attr(data-value);
+    font-size: 2rem;
+}
+
+.card::before {
+    top: .5rem;
+    left: .5rem;
+}
+
+.card::after {
+    bottom: .5rem;
+    right: .5rem;
+    transform: rotate(180deg);
+}
